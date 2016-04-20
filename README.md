@@ -1,3 +1,3 @@
 # portfolio
-Portfolio design for Thiago Barcelos <br />
+Portfolio design site for Thiago Barcelos <br />
 www.thiagobarcelos.com
