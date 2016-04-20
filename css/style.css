@@ -1,0 +1,473 @@
+/* Font imports */
+@import url(https://fonts.googleapis.com/css?family=Poppins:300,700);
+@import url(https://fonts.googleapis.com/css?family=Yantramanav:300);
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:400italic);
+
+/* General */
+body {
+    margin: 0px;
+    color: #212449;
+    background-color: rgb(253, 58, 82);
+    overflow-x: hidden;
+}
+h1, h2, h3, main p {
+    cursor: default;
+}
+header {
+    height: 100vh;
+    margin-bottom: 30px;
+}
+.clearfix:after {
+   content: " ";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+.imgDropShadow {
+    -webkit-filter: drop-shadow(0px 14px 10px rgba(0,0,0, 0.2));
+    filter: drop-shadow(0px 14px 10px rgba(0,0,0, 0.2));
+}
+.imgDropShadowVivo {
+    -webkit-filter: drop-shadow(0px 50px 10px rgba(0,0,0, 0.1));
+    filter: drop-shadow(0px 50px 10px rgba(0,0,0, 0.1));
+}
+#down {
+    margin: 0px 0px 20px 0px;
+}
+
+/* Main Column */
+.col {
+    max-width: 1440px;
+    padding: 0px 10%;
+    margin: 0px auto;
+}
+
+/* Typography */
+h1 {
+    font-family: 'Poppins', Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 6.25em;
+    letter-spacing: -5px;
+    line-height: .9;
+    padding: 0px;
+    margin: 0px 0px 0px -7px;;
+}
+h2 {
+    font-family: 'Poppins', Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 5em;
+    letter-spacing: -5px;
+    line-height: .9;
+    padding: 0px;
+    margin: 0px 0px 15px -7px;;
+}
+h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.4em;
+    text-transform: lowercase;
+    padding: 0px;
+    margin: 0px 0px 10px 0px;
+}
+p {
+    font-family: 'Yantramanav', Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: .9em;
+    line-height: 1.5em;
+    margin: 15px 0px;
+}
+
+/* Logo */
+.logo {
+    font-family: "Poppins", arial, sans-serif;
+    font-weight: 700;
+    width: 73px;
+    height: 70px;
+    text-align: center;
+    position: fixed;
+    float: left;
+    cursor: pointer;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: none;
+    color: #FD3A52;
+    border: 3px solid #212449;
+    z-index: 2;
+}
+.sayHi {
+    font-family: "Poppins", arial, sans-serif;
+    font-weight: 700;
+    width: 73px;
+    height: 70px;
+    text-align: center;
+    position: fixed;
+    float: left;
+    cursor: pointer;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: #FD3A52;
+    color: #212449;
+    border: 35px solid #212449;
+    opacity: 1;
+
+    transition: border .2s;
+    -webkit-transition: border .2s;
+    -moz-transition: border .2s;
+    -o-transition: border .2s;
+}
+.logo p, .sayHi p {
+    font-family: "Poppins", arial, sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    position: absolute;
+    margin: 0px;
+    line-height: inherit;
+    width: 100%;
+    top: 10px;
+}
+.logo p {
+    opacity: 1;
+
+    transition: top .2s;
+    -webkit-transition: top .2s;
+    -moz-transition: top .2s;
+    -o-transition: top .2s;
+}
+.logoWrapper:hover .sayHi {
+    opacity: 1;
+    border: 3px solid #212449;
+    z-index: 1;
+}
+.logoWrapper:hover .logo p {
+    top: -33px
+}
+
+/* Release Version */
+.logoWrapper::after, .logoWrapper::before {
+    font-family: 'Playfair Display', georgia, serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: .8em;
+    position: fixed;
+    display: block;
+    margin-left: -5px;
+    left: 115px;
+}
+.logoWrapper::before {
+    content: "βeta";
+}
+.logoWrapper::after {
+    content: "v1.1.2";
+    top: 42px;
+}
+
+/* Menu */
+header {
+    margin-bottom: 35px;
+}
+header > nav {
+    height: auto;
+}
+nav {
+    padding: 30px 30px 0px 30px;
+}
+a, a:link, a:visited, a:focus {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: color .2s ease-out;
+    -moz-transition: color .2s ease-out;
+    -webkit-transition: color .2s ease-out;
+    -o-transition: color .2s ease-out;
+}
+.menu li.hover {
+    border-bottom: 4px solid;
+    z-index: 1;
+}
+ul.menu {
+    float: right;
+    display: flex;
+    height: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+ul.menu li {
+    padding: 0px 15px;
+    list-style: none;
+    align-self: center;
+    height: 30px;
+}
+ul.menu li p {
+    border-top: 0px solid #212449;
+    padding-top: 3px;
+    margin-bottom: 0px;
+
+    transition: all .1s;
+    -webkit-transition: all .1s;
+    -moz-transition: all .1s;
+    -o-transition: all .1s;
+}
+ul.menu li a:hover p {
+    /*border-bottom: 4px solid #FD3A52;*/
+    border-top: 8px solid #212449;
+    padding-top: 3px;
+}
+ul.menu li:last-child {
+    padding-right: 0px;
+}
+
+/* Lead */
+.lead h1 span {
+    font-weight: 300;
+    font-size: .9em;
+    margin-right: 16px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    position: absolute;
+}
+.lead hgroup h1:nth-last-child(2) {
+    font-weight: 300;
+    display: inline-block;
+}
+.lead hgroup h1:last-child {
+    margin-left: 10px;
+    display: inline-block;
+}
+.description {
+    margin-top: 30px;
+    max-width: 300px;
+}
+
+/* Portfolio */
+.portfolio > div {
+    margin: 12% 0px;
+}
+.portfolio > div:last-child {
+    margin: 75px 0px 0px 0px;
+}
+.projectImg {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 5%;
+}
+.projectName {
+    margin-left: 10%;
+    position: relative;
+}
+.projectName::before {
+    content: "–––––––";
+    font-size: 600px;
+    line-height: 0;
+    letter-spacing: -30px;
+    position: absolute;
+    top: -25px;
+    left: -1940px;
+}
+/* Footer */
+.heart {
+    font-family: sans-serif;
+    font-size: 1em;
+    /*cursor: pointer;*/
+    transition: font-size .2s ease-out;
+    -moz-transition: font-size .2s ease-out;
+    -webkit-transition: font-size .2s ease-out;
+    -o-transition: font-size .2s ease-out;
+}
+/*.heart:hover {
+    font-size: 2em;
+}*/
+
+footer {
+    padding-left: 3%;
+}
+footer p {
+    font-family: 'Playfair Display', georgia, serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: .7em;
+    text-align: left;
+    cursor: default;
+    border-bottom: 15px solid;
+    padding-bottom: 5px;
+    display: inline;
+}
+footer p span {
+    font-style: normal;
+    text-align: center;
+    white-space: nowrap;
+}
+.scrollPage {
+    font-family: sans-serif;
+    font-size: .8em;
+    background-color: #212449;
+    padding-top: 14px;
+    padding-bottom: 10px;
+    margin-bottom: -20px;
+    width: 45px;
+    height: 17px;
+    text-align: center;
+    color: #FD3A52;
+    right: 10px;
+    position: fixed;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 2;
+}
+.scrollPage div {
+    width: 100%;
+    height: auto;
+    position: absolute;
+}
+.scrollPage div:first-child {
+    top: 12px;
+
+    transition: all .2s;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -o-transition: all .2s;
+}
+.scrollPage div:last-child {
+    top: 45px;
+
+    transition: all .2s;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -o-transition: all .2s;
+}
+.scrollPage:hover div:first-child {
+    top: -20px;
+}
+.scrollPage:hover div:last-child {
+    top: 12px;
+}
+header .scrollPage {
+    position: absolute;
+    display: block;
+    right: initial;
+    bottom: 20px;
+}
+
+/* Responsive Breakpoints */
+@media screen and (max-width: 1280px) {
+    h1 {
+        font-size: 6em;
+    }
+    h2 {
+        font-size: 4.9em;
+        max-width: 700px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    h1 {
+        font-size: 4.9em;
+    }
+    h2 {
+        font-size: 3.9em;
+        max-width: 360px;
+    }
+    .projectName::before {
+        top: -33px;
+    }
+}
+@media screen and (min-width: 770px) {
+    .col.lead {
+        margin-top: 80px;
+    }
+    /*header .scrollPage {
+        display: none;
+    }*/
+}
+@media screen and (max-width: 769px) {
+    .col.lead {
+        margin-top: -30px;
+    }
+    .projectName::before {
+        top: -44px;
+    }
+    ul.menu {
+        display: block;
+        margin-top: -15px;
+    }
+    nav {
+        height: 72px;
+    }
+    .logo, .sayHi,
+    .logoWrapper::after, .logoWrapper::before {
+        position: absolute;
+    }
+}
+@media screen and (max-width: 500px) {
+    h1 {
+        font-size: 3.8em;
+    }
+    h2 {
+        font-size: 2.5em;
+        letter-spacing: -3px;
+        max-width: 250px;
+    }
+    p {
+        font-size: .9em;
+        padding-top: 0px;
+    }
+}
+@media screen and (max-width: 320px) {
+    h1 {
+        font-size: 3em;
+        letter-spacing: -2.5px;
+    }
+    h2 {
+        font-size: ;
+        max-width: 230px;
+    }
+    h3 {
+        font-size: 1.2em;
+    }
+    footer {
+        width: 190px;
+        left: inherit;
+        float: right;
+        margin-right: 30px;
+    }
+    footer p {
+        padding-bottom: 10px;
+        text-align:left;
+        border-bottom: inherit;
+    }
+    .scrollPage {
+        height: 17px;
+        right: inherit;
+        left: -50px;
+        bottom: 11px;
+    }
+}
+
+/* Hide Animation Lead */
+@media screen and (min-width: 770px) {
+    .menu.hideStatic,
+    .lead.hideStatic {
+        display: none;
+    }
+}
+@media screen and (max-width: 769px) {
+    .revealOnScroll.hideAnimation,
+    .lead.hideAnimation {
+        display: none;
+    }
+}
+
+/* Reveal on scroll */
+.revealOnScroll { opacity: 0; }
+
+/* Firefox Hack */
+@-moz-document url-prefix() {
+  .projectName::before {
+      top: 15px;
+  }
+}
+
+/* Fade out on scroll */
+.top {
+  opacity: 1;
+}

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <title>UX Designer &amp; UI Developer – Thiago Barcelos</title>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-53538382-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <!-- CSS imports -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+
+
+    <!-- js imports -->
+    <script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <script>
+    //js animate to top
+        $(function() {
+          $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+              var target = $(this.hash);
+              target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+              if (target.length) {
+                $('html,body').animate({
+                  scrollTop: target.offset().top
+                }, 1000);
+                return false;
+              }
+            }
+          });
+        });
+
+    // js reveal on scroll
+    $(function() {
+
+      var $window           = $(window),
+          win_height_padded = $window.height() * 1.1,
+          isTouch           = Modernizr.touch;
+
+      if (isTouch) { $('.revealOnScroll').addClass('animated'); }
+
+      $window.on('scroll', revealOnScroll);
+
+      function revealOnScroll() {
+        var scrolled = $window.scrollTop(),
+            win_height_padded = $window.height() * 1.1;
+
+        // Showed...
+        $(".revealOnScroll:not(.animated)").each(function () {
+          var $this     = $(this),
+              offsetTop = $this.offset().top;
+
+          if (scrolled + win_height_padded > offsetTop) {
+            if ($this.data('timeout')) {
+              window.setTimeout(function(){
+                $this.addClass('animated ' + $this.data('animation'));
+              }, parseInt($this.data('timeout'),10));
+            } else {
+              $this.addClass('animated ' + $this.data('animation'));
+            }
+          }
+        });
+        // Hidden...
+       $(".revealOnScroll.animated").each(function (index) {
+          var $this     = $(this),
+              offsetTop = $this.offset().top;
+          if (scrolled + win_height_padded < offsetTop) {
+            $(this).removeClass('animated fadeInUp flipInX lightSpeedIn')
+          }
+        });
+      }
+
+      revealOnScroll();
+    });
+
+    // js fade out on scroll
+    $(window).scroll(function(){
+    $(".top").css("opacity", 1 - $(window).scrollTop() / 250);
+    });
+
+    </script>
+</head>
+<body id="top">
+    <header>
+        <nav class="clearfix" data-timeout="0">
+            <div class="logoWrapper">
+                <a href="http://www.thiagobarcelos.com">
+                    <div class="logo">
+                        <p>TB</p>
+                    </div>
+                    <div class="sayHi">
+                        <p>Hi!</p>
+                    </div>
+                </a>
+            </div>
+            <ul class="menu revealOnScroll hideAnimation" data-animation="fadeInDown" data-timeout="100">
+                <li><a href="http://www.linkedin.com/in/thiagobarcelos"><p>linkedin</p></a></li>
+                <li><a href="https://dribbble.com/thiagobarcelos"><p>dribbble</p></a></li>
+                <li><a href="https://twitter.com/barcelosthiago"><p>twitter</p></a></li>
+                <li><a href="mailto:hi@thiagobarcelos.com"><p>contact</p></a></li>
+            </ul>
+            <!-- Hide Static -->
+            <ul class="menu hideStatic">
+                <li><a href="http://www.linkedin.com/in/thiagobarcelos"><p>linkedin</p></a></li>
+                <li><a href="https://dribbble.com/thiagobarcelos"><p>dribbble</p></a></li>
+                <li><a href="https://twitter.com/barcelosthiago"><p>twitter</p></a></li>
+                <li><a href="mailto:hi@thiagobarcelos.com"><p>contact</p></a></li>
+            </ul>
+        </nav>
+        <section class="col lead">
+            <div class="lead hideAnimation">
+                <hgroup class="revealOnScroll" data-animation="fadeInUp" data-timeout="0">
+                    <h3>Thiago Barcelos</h3>
+                    <h1>UX Designer</h1>
+                    <h1>&amp; UI Developer</h1>
+                    <h1>@</h1><h1>IBM</h1>
+                </hgroup>
+                <div class="description revealOnScroll hideAnimation" data-animation="fadeInUp" data-timeout="300">
+                    <p>I am passionate about technology, design, games, travels and healthy habits. From SaaS to mobile apps, I love creating digital products.</p>
+                </div>
+            </div>
+            <!-- Hide Static -->
+            <div class="lead hideStatic">
+                <hgroup>
+                    <h3>Thiago Barcelos</h3>
+                    <h1>UX Designer</h1>
+                    <h1>&amp; UI Developer</h1>
+                    <h1>@</h1><h1>IBM</h1>
+                </hgroup>
+                <div class="description">
+                    <p>I am passionate about technology, design, games, travels and healthy habits. From SaaS to mobile apps, I love creating digital products.</p>
+                </div>
+            </div>
+        </section>
+        <section class="col top">
+            <a href="#down">
+                <div class="scrollPage">
+                    <div>&#8595;</div>
+                    <div>&#8595;</div>
+                </div>
+            </a>
+        </section>
+    </header>
+    <div id="down">&nbsp;</div>
+    <div class="col">
+        <section class="portfolio">
+            <div>
+                <div class="projectName">
+                    <h2>Soundview</h2>
+                </div>
+                <img class="projectImg" src="images/img_soundview.png">
+            </div>
+            <div>
+                <div class="projectName">
+                    <h2>Itamb&eacute;</h2>
+                </div>
+                <img class="projectImg imgDropShadow" src="images/img_itambe.png">
+            </div>
+            <div>
+                <div class="projectName">
+                    <h2>IMDB Redesign</h2>
+                </div>
+                <img class="projectImg imgDropShadow" src="images/img_imdb.png">
+            </div>
+            <div>
+                <div class="projectName">
+                    <h2>Truckpad App</h2>
+                </div>
+                <img class="projectImg" src="images/img_truckpad.png">
+            </div>
+            <div>
+                <div class="projectName">
+                    <h2>Maplink</h2>
+                </div>
+                <img class="projectImg" src="images/img_maplink.png">
+            </div>
+            <div>
+                <div class="projectName">
+                    <h2>Minhas Rotas</h2>
+                </div>
+                <img class="projectImg imgDropShadow" src="images/img_minhasrotas.png">
+            </div>
+            <div>
+                <div class="projectName">
+                    <h2>Vivo Play</h2>
+                </div>
+                <img class="projectImg imgDropShadowVivo" src="images/img_vivo.png">
+            </div>
+            <div>
+                <div class="projectName">
+                    <h2>Oi Brandzone</h2>
+                </div>
+                <img class="projectImg" src="images/img_oi.png">
+            </div>
+            <div>
+                <div class="projectName">
+                    <h2>Abril Social Media</h2>
+                </div>
+                <img class="projectImg imgDropShadow" src="images/img_abril.png">
+            </div>
+            <div>
+                <div class="projectName">
+                    <h2>Abril Tablet Lab</h2>
+                </div>
+                <img class="projectImg" src="images/img_tlab.png">
+            </div>
+            <div>
+                <div class="projectName">
+                    <h2>Claro Experi&ecirc;cias</h2>
+                </div>
+                <img class="projectImg" src="images/img_claro.png">
+            </div>
+        </section>
+    </div>
+    <footer class="revealOnScroll" data-animation="fadeInUp" data-timeout="0">
+        <a href="#top">
+            <div class="scrollPage">
+
+                <div>&#8593;</div>
+                <div>&#8593;</div>
+            </div>
+        </a>
+        <p>Coded with love and care <span class="heart">&#10084;</span> during my sleepless nights.</p>
+    </footer>
+</body>
+</html>
