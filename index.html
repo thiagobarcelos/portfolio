@@ -6,6 +6,7 @@
     <link rel="shortcut icon" href="images/favicon.ico">
     <title>UX Designer &amp; UI Developer – Thiago Barcelos</title>
     <script>
+        //Google Analytics
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -19,77 +20,10 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/animate.css">
 
-
     <!-- js imports -->
     <script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
-    <script>
-    //js animate to top
-        $(function() {
-          $('a[href*=#]:not([href=#])').click(function() {
-            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-              var target = $(this.hash);
-              target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-              if (target.length) {
-                $('html,body').animate({
-                  scrollTop: target.offset().top
-                }, 1000);
-                return false;
-              }
-            }
-          });
-        });
-
-    // js reveal on scroll
-    $(function() {
-
-      var $window           = $(window),
-          win_height_padded = $window.height() * 1.1,
-          isTouch           = Modernizr.touch;
-
-      if (isTouch) { $('.revealOnScroll').addClass('animated'); }
-
-      $window.on('scroll', revealOnScroll);
-
-      function revealOnScroll() {
-        var scrolled = $window.scrollTop(),
-            win_height_padded = $window.height() * 1.1;
-
-        // Showed...
-        $(".revealOnScroll:not(.animated)").each(function () {
-          var $this     = $(this),
-              offsetTop = $this.offset().top;
-
-          if (scrolled + win_height_padded > offsetTop) {
-            if ($this.data('timeout')) {
-              window.setTimeout(function(){
-                $this.addClass('animated ' + $this.data('animation'));
-              }, parseInt($this.data('timeout'),10));
-            } else {
-              $this.addClass('animated ' + $this.data('animation'));
-            }
-          }
-        });
-        // Hidden...
-       $(".revealOnScroll.animated").each(function (index) {
-          var $this     = $(this),
-              offsetTop = $this.offset().top;
-          if (scrolled + win_height_padded < offsetTop) {
-            $(this).removeClass('animated fadeInUp flipInX lightSpeedIn')
-          }
-        });
-      }
-
-      revealOnScroll();
-    });
-
-    // js fade out on scroll
-    $(window).scroll(function(){
-    $(".top").css("opacity", 1 - $(window).scrollTop() / 250);
-    });
-
-    </script>
 </head>
 <body id="top">
     <header>
@@ -159,67 +93,67 @@
                 <div class="projectName">
                     <h2>Soundview</h2>
                 </div>
-                <img class="projectImg" src="images/img_soundview.png">
+                <img class="projectImg" src="images/img_soundview.png" alt="Soundview">
             </div>
             <div>
                 <div class="projectName">
                     <h2>Itamb&eacute;</h2>
                 </div>
-                <img class="projectImg imgDropShadow" src="images/img_itambe.png">
+                <img class="projectImg imgDropShadow" src="images/img_itambe.png" alt="Itamb&eacute;">
             </div>
             <div>
                 <div class="projectName">
                     <h2>IMDB Redesign</h2>
                 </div>
-                <img class="projectImg imgDropShadow" src="images/img_imdb.png">
+                <img class="projectImg imgDropShadow" src="images/img_imdb.png" alt="IMDB Redesign">
             </div>
             <div>
                 <div class="projectName">
-                    <h2>Truckpad App</h2>
+                    <h2>TruckPad App</h2>
                 </div>
-                <img class="projectImg" src="images/img_truckpad.png">
+                <img class="projectImg" src="images/img_truckpad.png" alt="TruckPad">
             </div>
             <div>
                 <div class="projectName">
                     <h2>Maplink</h2>
                 </div>
-                <img class="projectImg" src="images/img_maplink.png">
+                <img class="projectImg" src="images/img_maplink.png" alt="Maplink">
             </div>
             <div>
                 <div class="projectName">
                     <h2>Minhas Rotas</h2>
                 </div>
-                <img class="projectImg imgDropShadow" src="images/img_minhasrotas.png">
+                <img class="projectImg imgDropShadow" src="images/img_minhasrotas.png" alt="MinhasRotas">
             </div>
             <div>
                 <div class="projectName">
                     <h2>Vivo Play</h2>
                 </div>
-                <img class="projectImg imgDropShadowVivo" src="images/img_vivo.png">
+                <img class="projectImg imgDropShadowVivo" src="images/img_vivo.png" alt="Vivo Play">
             </div>
             <div>
                 <div class="projectName">
                     <h2>Oi Brandzone</h2>
                 </div>
-                <img class="projectImg" src="images/img_oi.png">
+                <img class="projectImg" src="images/img_oi.png" alt="Oi Brandzone">
             </div>
             <div>
                 <div class="projectName">
                     <h2>Abril Social Media</h2>
                 </div>
-                <img class="projectImg imgDropShadow" src="images/img_abril.png">
+                <img class="projectImg imgDropShadow" src="images/img_abril.png" alt="Abril Social Media">
             </div>
             <div>
                 <div class="projectName">
                     <h2>Abril Tablet Lab</h2>
                 </div>
-                <img class="projectImg" src="images/img_tlab.png">
+                <img class="projectImg" src="images/img_tlab.png" alt="Abril Tablet Lab">
             </div>
             <div>
                 <div class="projectName">
                     <h2>Claro Experi&ecirc;cias</h2>
                 </div>
-                <img class="projectImg" src="images/img_claro.png">
+                <img class="projectImg" src="images/img_claro.png" alt="Claro Experi&ecirc;cias">
             </div>
         </section>
     </div>
@@ -233,5 +167,8 @@
         </a>
         <p>Coded with love and care <span class="heart">&#10084;</span> during my sleepless nights.</p>
     </footer>
+
+    <!-- js Interactions -->
+    <script src="js/interactions.js"></script>
 </body>
 </html>
