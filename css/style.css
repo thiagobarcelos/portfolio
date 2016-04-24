@@ -1,7 +1,7 @@
 /* Font imports */
 @import url(https://fonts.googleapis.com/css?family=Poppins:300,700);
-@import url(https://fonts.googleapis.com/css?family=Yantramanav:300);
-@import url(https://fonts.googleapis.com/css?family=Playfair+Display:400italic);
+@import url(https://fonts.googleapis.com/css?family=Yantramanav:300,700);
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:400italic,Playfair+Display:400);
 
 /* General */
 body {
@@ -80,6 +80,9 @@ p {
 }
 
 /* Logo */
+.logoWrapper {
+    transition-delay: .2s;
+}
 .logo {
     font-family: "Poppins", arial, sans-serif;
     font-weight: 700;
@@ -111,11 +114,14 @@ p {
     color: #212449;
     border: 35px solid #212449;
     opacity: 1;
+    z-index: 1;
 
     transition: border .2s;
     -webkit-transition: border .2s;
     -moz-transition: border .2s;
     -o-transition: border .2s;
+
+    transition-delay: .15s;
 }
 .logo p, .sayHi p {
     font-family: "Poppins", arial, sans-serif;
@@ -128,20 +134,18 @@ p {
     top: 10px;
 }
 .logo p {
-    opacity: 1;
-
-    transition: top .2s;
-    -webkit-transition: top .2s;
-    -moz-transition: top .2s;
-    -o-transition: top .2s;
+    transition: top .3s ease-out;
+    -webkit-transition: top .3s ease-out;
+    -moz-transition: top .3s ease-out;
+    -o-transition: top .3s ease-out;
 }
 .logoWrapper:hover .sayHi {
-    opacity: 1;
     border: 3px solid #212449;
-    z-index: 1;
+
+    transition-delay: .2s;
 }
 .logoWrapper:hover .logo p {
-    top: -33px
+    top: -33px;
 }
 
 /* Release Version */
@@ -159,7 +163,7 @@ p {
     content: "βeta";
 }
 .logoWrapper::after {
-    content: "v1.1.2";
+    content: "v1.2.0";
     top: 42px;
 }
 
@@ -182,24 +186,24 @@ a, a:link, a:visited, a:focus {
     -webkit-transition: color .2s ease-out;
     -o-transition: color .2s ease-out;
 }
-.menu li.hover {
+.menuTop li.hover {
     border-bottom: 4px solid;
     z-index: 1;
 }
-ul.menu {
+ul.menuTop {
     float: right;
     display: flex;
     height: 100%;
     margin-top: 0px;
     margin-bottom: 0px;
 }
-ul.menu li {
+ul.menuTop li {
     padding: 0px 15px;
     list-style: none;
     align-self: center;
     height: 30px;
 }
-ul.menu li p {
+ul.menuTop li p {
     border-top: 0px solid #212449;
     padding-top: 3px;
     margin-bottom: 0px;
@@ -209,12 +213,12 @@ ul.menu li p {
     -moz-transition: all .1s;
     -o-transition: all .1s;
 }
-ul.menu li a:hover p {
+ul.menuTop li a:hover p {
     /*border-bottom: 4px solid #FD3A52;*/
     border-top: 8px solid #212449;
     padding-top: 3px;
 }
-ul.menu li:last-child {
+ul.menuTop li:last-child {
     padding-right: 0px;
 }
 
@@ -238,6 +242,221 @@ ul.menu li:last-child {
 .description {
     margin-top: 30px;
     max-width: 300px;
+    position: relative;
+    left: 545px;
+    top: -40px;
+}
+.actionBtn {
+    position: relative;
+    display: inline-block;
+    background-color: #212449;
+    color: #FD3A52;
+    padding: 0px 20px;
+    width: 100px;
+    top: 55px;
+    overflow: hidden;
+
+    transition: all .2s;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -o-transition: all .2s;
+}
+
+.actionBtn:hover {
+    width: 120px;
+    padding: 0px 30px;
+}
+
+.actionBtn p {
+    font-family: 'Yantramanav', Helvetica, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    position: relative;
+    display: inline-block;
+    margin: 12px 0px;
+}
+.actionBtn div {
+    font-family: sans-serif;
+    font-size: 1em;
+    display: inline-block;
+    position: absolute;
+    padding-top: 13px;
+    right: 20px;
+    top: 0px;
+
+    transition: all .2s;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -o-transition: all .2s;
+}
+.actionBtn:hover div {
+    top: 0px;
+    right: 30px;
+}
+
+/* About me */
+.hideAbout {
+    display: none;
+}
+.noScroll {
+    overflow-y: hidden;
+}
+@-webkit-keyframes resizeIn { from { height: 0vh; } to { height: 100vh; } }
+@-moz-keyframes resizeIn { from { height: 0vh; } to { height: 100vh; } }
+@keyframes resizeIn { from { height: 0vh; } to { height: 100vh; } }
+
+.resizeIn {
+	height: 0px;  /* make things invisible upon start */
+	-webkit-animation:resizeIn ease-in-out 1 1s;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+	-moz-animation:resizeIn ease-in-out 1 1s;
+	animation:resizeIn ease-in-out 1 1s;
+
+	-webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+
+    display: block;
+}
+@-webkit-keyframes resizeOut { from { height: 100vh; opacity: 1; } to { height: 0vh; opacity: 1; } }
+@-moz-keyframes resizeOut { from { height: 100vh; opacity: 1; } to { height: 0vh; opacity: 1; } }
+@keyframes resizeOut { from { height: 100vh; opacity: 1; } to { height: 0vh; opacity: 1; } }
+
+.resizeOut {
+	height: 100vh;  /* make things invisible upon start */
+    opacity: 1;
+	-webkit-animation:resizeOut ease-in-out 1 1s;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+	-moz-animation:resizeOut ease-in-out 1 1s;
+	animation:resizeOut ease-in-out 1 1s;
+
+	-webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+}
+
+.aboutMe .logo {
+    color: #FFCE00;
+}
+.aboutMe .sayHi {
+    background-color: #FFCE00;
+}
+.aboutMe nav {
+    position: absolute;
+    width: 100%;
+}
+.content {
+    max-width: 1440px;
+    height: 100vh;
+    padding: 0px 10%;
+    margin: 0px auto;
+}
+.aboutMe {
+    background-color: #FFCE00;
+    z-index: 3;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+.colProfile, .colTextContainer {
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 160px;
+}
+.colProfile {
+    /*width: 300px;*/
+    width: 30%;
+    max-width: 300px;
+}
+.colTextContainer {
+    /*width: calc(90% - 300px);*/
+    width: calc(90% - 30%);
+    /*height: 100vh;*/
+    height: calc(100vh - 100px);
+    overflow-y: scroll;
+    padding-right: 15px;
+}
+.profilePicture {
+    background-image: url('https://pbs.twimg.com/profile_images/441405285878358016/3K7PNbr7.jpeg');
+    background-repeat: no-repeat;
+    background-size: 150px;
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+}
+.profileLinks {
+    margin-top: 100px;
+}
+.aboutMe h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 4.25em;
+    line-height: 70px;
+    letter-spacing: normal;
+    padding: 0px;
+    margin: 0px 0px 30px 0px;
+    max-width: 700px;
+}
+.aboutMe h4 {
+    font-family: 'Yantramanav', Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: .9em;
+    text-transform: uppercase;
+    line-height: 1.5em;
+    border-bottom: 4px solid;
+    padding-bottom: 5px;
+    width: 100%;
+    display: table-cell;
+}
+.aboutMe .colTextContainer p {
+    font-family: 'Yantramanav', Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 1.2em;
+    font-style: normal;
+    letter-spacing: normal;
+    padding: 10px 0px;
+    margin: 0px;
+}
+.aboutMe .profileLinks p {
+    font-family: 'Yantramanav', Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: .9em;
+    line-height: .8em;
+    width: 80px;
+
+    transition: all .2s;
+    -moz-transition: all .2s;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+}
+.aboutMe .colProfile ul li:hover p {
+    padding-left: 5px;
+    border-left: 8px solid;
+}
+.aboutMe .colProfile p:after {
+    content: "→";
+    visibility: visible;
+    height: 0;
+    clear: both;
+    float: right;
+    color: transparent;
+
+    transition: all .2s;
+    -moz-transition: all .2s;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+
+    /*transition-delay: .1s;*/
+}
+.aboutMe .colProfile ul li:hover p:after {
+    color: inherit;
+}
+.aboutMe ul {
+    list-style:none;
+    padding: 5px 0px 0px 0px;
 }
 
 /* Portfolio */
@@ -269,7 +488,6 @@ ul.menu li:last-child {
 .heart {
     font-family: sans-serif;
     font-size: 1em;
-    /*cursor: pointer;*/
     transition: font-size .2s ease-out;
     -moz-transition: font-size .2s ease-out;
     -webkit-transition: font-size .2s ease-out;
@@ -279,9 +497,6 @@ ul.menu li:last-child {
     font-size: 2em;
 }*/
 
-footer {
-    padding-left: 3%;
-}
 footer p {
     font-family: 'Playfair Display', georgia, serif;
     font-weight: 300;
@@ -291,36 +506,48 @@ footer p {
     cursor: default;
     border-bottom: 15px solid;
     padding-bottom: 5px;
-    display: inline;
+    position: absolute;
+    margin: 6px 0px 0px 3%;
 }
 footer p span {
     font-style: normal;
     text-align: center;
     white-space: nowrap;
 }
-.scrollPage {
-    font-family: sans-serif;
-    font-size: .8em;
+.scrollBtn, .backBtn {
     background-color: #212449;
     padding-top: 14px;
     padding-bottom: 10px;
-    margin-bottom: -20px;
     width: 45px;
-    height: 17px;
+    height: 18px;
     text-align: center;
     color: #FD3A52;
-    right: 10px;
-    position: fixed;
     overflow: hidden;
     cursor: pointer;
     z-index: 2;
 }
-.scrollPage div {
+.scrollBtn {
+    position: absolute;
+    right: 3%;
+}
+.backBtn {
+    position: absolute;
+    right: 90px;
+}
+.scrollBtn div,
+.backBtn div {
+    font-family: sans-serif;
+    font-size: 1em;
     width: 100%;
     height: auto;
     position: absolute;
 }
-.scrollPage div:first-child {
+.backBtn div {
+    padding-top: 2px;
+    color: #FFCE00;
+}
+.scrollBtn div:first-child,
+.backBtn div:first-child {
     top: 12px;
 
     transition: all .2s;
@@ -328,7 +555,8 @@ footer p span {
     -moz-transition: all .2s;
     -o-transition: all .2s;
 }
-.scrollPage div:last-child {
+.scrollBtn div:last-child,
+.backBtn div:last-child {
     top: 45px;
 
     transition: all .2s;
@@ -336,17 +564,20 @@ footer p span {
     -moz-transition: all .2s;
     -o-transition: all .2s;
 }
-.scrollPage:hover div:first-child {
+.scrollBtn:hover div:first-child,
+.backBtn:hover div:first-child {
     top: -20px;
 }
-.scrollPage:hover div:last-child {
+.scrollBtn:hover div:last-child,
+.backBtn:hover div:last-child {
     top: 12px;
 }
-header .scrollPage {
+header .scrollBtn {
     position: absolute;
     display: block;
     right: initial;
-    bottom: 20px;
+    bottom: 0px;
+    right: 3%;
 }
 
 /* Responsive Breakpoints */
@@ -358,6 +589,9 @@ header .scrollPage {
         font-size: 4.9em;
         max-width: 700px;
     }
+    .description {
+        left: 520px;
+    }
 }
 @media screen and (max-width: 1024px) {
     h1 {
@@ -367,26 +601,42 @@ header .scrollPage {
         font-size: 3.9em;
         max-width: 360px;
     }
+    .description {
+        left: 415px;
+    }
     .projectName::before {
         top: -33px;
     }
 }
 @media screen and (min-width: 770px) {
     .col.lead {
-        margin-top: 80px;
+        margin-top: 100px;
     }
-    /*header .scrollPage {
-        display: none;
-    }*/
+    .colText {
+        height: 1300px;
+    }
+}
+@media screen and (min-width: 1280px) {
+    .colText {
+        height: 940px;
+    }
 }
 @media screen and (max-width: 769px) {
+    #openAbout, #aboutMe {
+        display: none;
+    }
+    .description {
+        left: 0px;
+        /*top: 50px;*/
+        top: 0px;
+    }
     .col.lead {
         margin-top: -30px;
     }
     .projectName::before {
         top: -44px;
     }
-    ul.menu {
+    ul.menuTop {
         display: block;
         margin-top: -15px;
     }
@@ -424,28 +674,16 @@ header .scrollPage {
     h3 {
         font-size: 1.2em;
     }
-    footer {
-        width: 190px;
-        left: inherit;
-        float: right;
-        margin-right: 30px;
-    }
     footer p {
-        padding-bottom: 10px;
-        text-align:left;
-        border-bottom: inherit;
-    }
-    .scrollPage {
-        height: 17px;
-        right: inherit;
-        left: -50px;
-        bottom: 11px;
+        border-bottom: none;
+        max-width: 200px;
+        margin-left: 5%;
     }
 }
 
 /* Hide Animation Lead */
 @media screen and (min-width: 770px) {
-    .menu.hideStatic,
+    .menuTop.hideStatic,
     .lead.hideStatic {
         display: none;
     }

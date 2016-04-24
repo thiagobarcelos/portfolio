@@ -61,3 +61,25 @@ $(function() {
 $(window).scroll(function(){
 $(".top").css("opacity", 1 - $(window).scrollTop() / 250);
 });
+
+// js about show/hideAbout
+$("#openAbout").click(function(e) {
+                $("#aboutMe").removeClass("hideAbout");
+                $("#aboutMe").addClass("resizeIn");
+                $("#top").addClass("noScroll");
+});
+
+$("#closeAbout").click(function(e) {
+                $("#aboutMe").addClass("resizeOut");
+                $("#aboutMe").removeClass("resizeIn");
+                $("#top").removeClass("noScroll");
+                setTimeout(function() { $("#aboutMe").removeClass("resizeOut"); }, 1000);
+                setTimeout(function() { $("#aboutMe").addClass("hideAbout"); }, 1000);
+});
+
+
+
+
+
+
+//

@@ -20,10 +20,6 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/animate.css">
 
-    <!-- js imports -->
-    <script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
 </head>
 <body id="top">
     <header>
@@ -38,14 +34,14 @@
                     </div>
                 </a>
             </div>
-            <ul class="menu revealOnScroll hideAnimation" data-animation="fadeInDown" data-timeout="100">
+            <ul class="menuTop revealOnScroll hideAnimation" data-animation="fadeInDown" data-timeout="100">
                 <li><a href="http://www.linkedin.com/in/thiagobarcelos"><p>linkedin</p></a></li>
                 <li><a href="https://dribbble.com/thiagobarcelos"><p>dribbble</p></a></li>
                 <li><a href="https://twitter.com/barcelosthiago"><p>twitter</p></a></li>
                 <li><a href="mailto:hi@thiagobarcelos.com"><p>contact</p></a></li>
             </ul>
             <!-- Hide Static -->
-            <ul class="menu hideStatic">
+            <ul class="menuTop hideStatic">
                 <li><a href="http://www.linkedin.com/in/thiagobarcelos"><p>linkedin</p></a></li>
                 <li><a href="https://dribbble.com/thiagobarcelos"><p>dribbble</p></a></li>
                 <li><a href="https://twitter.com/barcelosthiago"><p>twitter</p></a></li>
@@ -60,7 +56,13 @@
                     <h1>&amp; UI Developer</h1>
                     <h1>@</h1><h1>IBM</h1>
                 </hgroup>
-                <div class="description revealOnScroll hideAnimation" data-animation="fadeInUp" data-timeout="300">
+                <a id="openAbout" class="revealOnScroll hideAnimation" data-animation="fadeIn" data-timeout="400">
+                    <div class="actionBtn">
+                        <p>About me</p>
+                        <div>&rarr;</div>
+                    </div>
+                </a>
+                <div class="description revealOnScroll hideAnimation" data-animation="fadeIn" data-timeout="400">
                     <p>I am passionate about technology, design, games, travels and healthy habits. From SaaS to mobile apps, I love creating digital products.</p>
                 </div>
             </div>
@@ -72,18 +74,71 @@
                     <h1>&amp; UI Developer</h1>
                     <h1>@</h1><h1>IBM</h1>
                 </hgroup>
+                <a id="openAbout">
+                    <div class="actionBtn">
+                        <p>About me</p>
+                        <div>&rarr;</div>
+                    </div>
+                </a>
                 <div class="description">
                     <p>I am passionate about technology, design, games, travels and healthy habits. From SaaS to mobile apps, I love creating digital products.</p>
                 </div>
             </div>
         </section>
-        <section class="col top">
+        <section class="top">
             <a href="#down">
-                <div class="scrollPage">
+                <div class="scrollBtn">
                     <div>&#8595;</div>
                     <div>&#8595;</div>
                 </div>
             </a>
+        </section>
+        <!-- About me section -->
+        <section id="aboutMe" class="aboutMe hideAbout">
+            <nav>
+                <div class="logoWrapper">
+                    <a href="http://www.thiagobarcelos.com">
+                        <div class="logo">
+                            <p>TB</p>
+                        </div>
+                        <div class="sayHi">
+                            <p>Hi!</p>
+                        </div>
+                    </a>
+                </div>
+                <a id="closeAbout">
+                    <div class="backBtn">
+                        <div>&#8617;</div>
+                        <div>&#8617;</div>
+                    </div>
+                </a>
+            </nav>
+            <div class="content">
+                <div class="colProfile">
+                    <div class="profilePicture"></div>
+                    <div class="profileLinks">
+                        <h4>You can find me here</h4>
+                        <ul>
+                            <li><a href="http://www.linkedin.com/in/thiagobarcelos"><p>linkedin</p></a></li>
+                            <li><a href="https://www.dribbble.com/thiagobarcelos"><p>dribbble</p></a></li>
+                            <li><a href="http://www.be.net/thiagobarcelos"><p>behance</p></a></li>
+                            <li><a href="https://github.com/thiagobarcelos/"><p>github</p></a></li>
+                            <li><a href="http://www.twitter.com/barcelosthiago"><p>twitter</p></a></li>
+                            <li><a href="http://www.instagram.com/thiagobarcelos"><p>instagram</p></a></li>
+                            <li><a href="http://www.fb.com/barcelosthiago"><p>facebook</p></a></li>
+                            <li><a href="mailto:hi@thiagobarcelos.com"><p>email</p></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="colTextContainer">
+                    <div class="colText">
+                        <h2>Hello,</h2>
+                        <h2>My skills consist in delivering and concepting strategic and iconic user experiences through design.</h2>
+                        <p>With over 7 years of experience, I created projects for clients such as Abril Group, Oi, Vivo, Claro, Vale, Citibank, Maplink, TruckPad and IBM. I also had a strong performance with team management, huge projects and contact with customers and suppliers and web development.</p>
+                        <p>Nowadays I work as UX/UI Designer and Front-End Developer with the IBM Watson IoT team.</p>
+                    </div>
+                </div>
+            </div>
         </section>
     </header>
     <div id="down">&nbsp;</div>
@@ -157,18 +212,21 @@
             </div>
         </section>
     </div>
-    <footer class="revealOnScroll" data-animation="fadeInUp" data-timeout="0">
-        <a href="#top">
-            <div class="scrollPage">
 
+    <footer>
+        <p>Coded with love and care <span class="heart">&#10084;</span> during my sleepless nights.</p>
+        <a href="#top">
+            <div class="scrollBtn">
                 <div>&#8593;</div>
                 <div>&#8593;</div>
             </div>
         </a>
-        <p>Coded with love and care <span class="heart">&#10084;</span> during my sleepless nights.</p>
     </footer>
 
-    <!-- js Interactions -->
-    <script src="js/interactions.js"></script>
+    <!-- js imports -->
+    <script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+
 </body>
 </html>
